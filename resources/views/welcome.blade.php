@@ -28,9 +28,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active px-4 " href="./index.html">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link px-4" href="./store.html">Store</a>
-            <a class="nav-item nav-link px-4" href="./cart.html">My Cart</a>
+            <a class="nav-item nav-link active px-4 " href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link px-4" href="/store">Store</a>
+            <a class="nav-item nav-link px-4" href="/cart">My Cart</a>
             <a class="nav-item nav-link px-4" href="/login">Login</a>
           </div>
         </div>
