@@ -21,7 +21,8 @@
 
         <div class="loginForm">
             <h1 class="formtitle">Login</h1>
-            <form action="">
+            <form method="POST" action="/login">
+                {{csrf_field()}}
                 <div class="inputtype">
                     <input class="inputData" type="text" placeholder="Username" required>
                 </div>

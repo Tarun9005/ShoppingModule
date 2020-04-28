@@ -21,29 +21,31 @@
 
         <div class="loginForm">
             <h1 class="formtitle">Sign Up</h1>
-            <form action="">
+            <form method="POST" action="/signup">
+
+                {{csrf_field()}}
                 <div class="inputtype">
-                    <input class="inputData" type="text" placeholder="Name" required>
+                    <input class="inputData" type="text" placeholder="Name" name='name' required>
                 </div>
                 <div class="inputtype">
-                    <input class="inputData" type="email" placeholder="Email" required>
+                    <input class="inputData" type="email" placeholder="Email" name='email' required>
                 </div>
                 <div class="inputtype">
-                    <input class="inputData" type="text" placeholder="Userame" required>
+                    <input class="inputData" type="text" placeholder="Userame" name='username' required>
                 </div>
                 <div class="inputtype">
-                    <input class="inputData" type="password" placeholder="Password" required>
+                    <input class="inputData" type="password" placeholder="Password" name='password' required>
                 </div>
                 <h6 class= "signupText"><a href="/login">Already a user?</a></h6>
                 <button type="submit" class="social">Signup</button>
-                <div class="social loginGoogle">
+               {{--  <div class="social loginGoogle">
                     <img src="https://img.icons8.com/color/48/000000/google-logo.png"/>
                     <button type="submit" class="submitBtn lg">Login with google</button>
                 </div>
                 <div class="social loginFB">
                     <img src="https://img.icons8.com/color/48/000000/facebook.png"/>
                     <button type="submit" class="submitBtn">Login with facebook</button>
-                </div>
+                </div> --}}
             </form>
         </div>
 

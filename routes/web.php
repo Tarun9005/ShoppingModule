@@ -16,13 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login','SessionController@create');
+Route::post('/login','SessionController@store');
+Route::get('/logout','SessionController@destroy');
 
-Route::get('/signup', function () {
-    return view('signup');
-});
+Route::get('/signup','RegistrationController@create');
+Route::post('/signup','RegistrationController@store');
 
 Route::get('/store', function () {
     return view('store');
