@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+
+
+*{
+    font-family: 'Exo', sans-serif;
+}
+
+html,body{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    width: 100%;
+    min-height: 100vh;
+}
+.formtitle{
+    margin-bottom: 60px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+}
+.loginForm{
+    box-shadow: 0 10px 35px 0px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 50px 100px;
+    border-radius: 10px;
+    width: 560px;
+}
+input{
+    outline: none;
+    border: none;
+    padding: 10px 5px;
+    width: 100%;
+    border-bottom: 2px solid #adadad;
+}
+input:focus{
+    border-color: rgba(255, 51, 85, 0.85);
+    transition: all .4s linear;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.inputtype{
+
+    margin-bottom: 50px;
+}
+.signupText{
+    color: #a9a9a9;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.signupText a{
+    font-size: 14px;
+    /* border-bottom: .5px solid #a9a9a9; */
+    color: #a9a9a9;
+}
+.signupText a:hover{
+    color: black;
+    text-decoration: none;
+    transition: all .6s linear;
+}
+.social{
+    background: rgba(255, 51, 85, 0.85);
+    padding: 15px;
+    outline: none;
+    border: none;
+    color:#fff;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.submitBtn{
+    outline: none;
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    margin-left:10%;
+    color: white;
+}
+.loginGoogle{
+    background: #f2f2f2;
+}
+.lg{
+    color: black;
+}
+.loginFB{
+    background-color:#4267b2;
+
+}
+img{
+    width: 30px;
+    margin-left: 1px;
+}
+
+/* Responsive queries */
+@media(max-width:476px){
+    .social{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+}

@@ -1,100 +1,165 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreTube</title>
 
-        <title>Laravel</title>
+<!-- Stylesheets -->
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-            .full-height {
-                height: 100vh;
-            }
+</head>
+<body>
+    
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">StoreTube</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active px-4 " href="./index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link px-4" href="./store.html">Store</a>
+            <a class="nav-item nav-link px-4" href="./cart.html">My Cart</a>
+            <a class="nav-item nav-link px-4" href="/login">Login</a>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar Ends -->
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+      <!-- Focus content -->
+      <div class="jumbotron">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column justify-content-center align-items-center">
+                  <span class="jumboText">New Amazing Stuff is here</span>
+                  <span class="jumboSmall">Shop today and get <span class="highlight">20% discount</span></span> 
+                  <a href="./store.html" class="shopBtn">SHOP NOW</a></div>
+              <div class="col-lg-6 col-md-6 col-sm-6 d-flex justify-content-around">
+                  <img src="{{ asset('img/general/model.png')}}" class="img-fluid model" alt="">
+                  <img src="{{asset('img/general/denimj.png')}}" class="img-fluid denim" alt="">
+              </div>
 
-            .position-ref {
-                position: relative;
-            }
+          </div>
+      </div>
+      <!-- Focus content ends -->
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+      <!-- Features -->
+      <div class="row">
+        <!-- <div class="col-lg-1 col-md-1 col-sm-1"></div> -->
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="info">
+              <i class="fa fa-truck" style="font-size: 36px;"></i>
+              <div class="innerContent">
+                  <h5>NEXT DAY SHIPING</h5>
+                  <h6>We deliver door to door within a day or two. We have fastest delivey in the world.</h6>
+              </div>
+          </div> 
+        </div>
+        <!-- <div class="col-lg-1 col-md-1 col-sm-1"></div> -->
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="info">
+              <i class="fa fa-recycle" style="font-size: 36px;"></i>
+              <div class="innerContent">
+                  <h5>20 DAY FREE RETURN</h5>
+                  <h6>No problem if you did not like the product , you can return it for free within 20 days.</h6>
+              </div>
+          </div> 
+        </div>
+        <!-- <div class="col-lg-1 col-md-1 col-sm-1"></div> -->
 
-            .content {
-                text-align: center;
-            }
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="info">
+              <i class="fa fa-truck" style="font-size: 36px;"></i>
+              <div class="innerContent">
+                  <h5>SECURE CHECKOUT</h5>
+                  <h6>No problem if you did not like the product , you can return it for free within 20 days.</h6>
+              </div>
+          </div> 
+        </div>
+        <!-- <div class="col-lg-2 col-md-2 col-sm-2"></div> -->
 
-            .title {
-                font-size: 84px;
-            }
+      </div>
+      <!-- Features end -->
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+      <!-- Second jumbotron with focussed content -->
+      <div class="jumbotron">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column justify-content-center align-items-center">
+                <span class="jumboText">This season</span>
+                <span class="jumboSmall">Get ready to change.</span> 
+                <a href="./store.html" class="shopBtn">SHOP NOW</a></div>
+            <div class="col-lg-6 col-md-6 col-sm-6 d-flex justify-content-around">
+                <img src="{{asset('img/general/season.png')}}" class="img-fluid season" alt="">
             </div>
         </div>
-    </body>
+    </div>
+      <!-- Ends -->
+
+      <!-- Teaser section -->
+      <div class="teaser">
+        <span class="teaserText">New Arrivals</span>
+        <span class="teaserSmall">MENS JACKET</span> 
+      </div> 
+
+      <div class="teaserProd">
+        <!-- Dynamic insertion of sample products through sample.js -->
+      </div>
+      <!-- Ends -->
+    </div>
+
+
+     <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Success</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <p>Product was added to cart!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="shopBtn" style="outline: none; border: none;" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="jumbotron">
+    All Rights Reserved 
+    &copy; Storetube Inc <br>
+    <a href="mailto:nsnaman36@gmail.com" class="btn btn-info">Get in Touch</a>
+  </footer>
+
+
+<script src="{{ asset('js/sample.js') }}"></script>
+<script src="{{ asset('js/storage.js') }}"></script>
+      
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

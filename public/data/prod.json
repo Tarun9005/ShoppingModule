@@ -1,0 +1,88 @@
+[
+    {
+        "src":"../../src/img/products/1.png",
+        "price":"30",
+        "name":"USPA White Hoodie"
+    },
+    {
+        "src":"../../src/img/products/2.png",
+        "price":"40",
+        "name":"North Face Maroon Bomber Jacket"
+    },
+    {
+        "src":"../../src/img/products/3.png",
+        "price":"38",
+        "name":"Uniqlo Brown Jacket"
+    },
+    {
+        "src":"../../src/img/products/4.png",
+        "price":"54",
+        "name":"Levi's Denim Jacket"
+    },
+    {
+        "src":"../../src/img/products/5.png",
+        "price":"28",
+        "name":"Van White Hoodie"
+    },
+
+    {
+        "src":"../../src/img/products/prod1.jpg",
+        "price":"25",
+        "name":"Peter England Red Check Shirt"
+    },
+
+    {
+        "src":"../../src/img/products/prod2.jpg",
+        "price":"32",
+        "name":"Duke Blue Denim Shirt"
+    },
+
+    {
+        "src":"../../src/img/products/prod3.jpg",
+        "price":"37",
+        "name":"Old Navy Classic White Hoodie"
+    },
+
+    {
+        "src":"../../src/img/products/prod4.jpg",
+        "price":"55",
+        "name":"UCB's Mega Combo"
+    },
+
+    {
+        "src":"../../src/img/products/prod5.jpg",
+        "price":"20",
+        "name":"Aeropostale White Tshirt"
+    },
+
+    {
+        "src":"../../src/img/products/prod6.jpg",
+        "price":"35",
+        "name":"Converse Dotted Short"
+    },
+
+    {
+        "src":"../../src/img/products/prod7.jpg",
+        "price":"50",
+        "name":"Arrow Grey Blazer"
+    },
+
+    {
+        "src":"../../src/img/products/prod8.jpg",
+        "price":"48",
+        "name":"Mast and Harbour Classic Dotted Pullover"
+    },
+
+    {
+        "src":"../../src/img/products/prod9.jpg",
+        "price":"52",
+        "name":"Jack and Jones Olive Coat"
+    },
+
+    {
+        "src":"../../src/img/products/prod10.jpeg",
+        "price":"54",
+        "name":"Belstaff Leather Jacket"
+    }
+     
+]

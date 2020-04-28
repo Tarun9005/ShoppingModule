@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Exo&display=swap');
+
+/*Note:- Use Bootstrap defined classes for alignment, positioning, padding, margin to avoid content overflow.*/
+
+*{
+    font-family: 'Exo', sans-serif;
+}
+html,body{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+nav{
+    font-size: 24px;
+}
+.navbar-brand{
+    font-weight: bold;
+    letter-spacing: 2px;
+    /* font-size: 35px; */
+}
+
+.nav-link:hover{
+    background: rgba(255, 51, 85, 0.85);
+    color : white !important;
+}
+.navbar-nav{
+    margin:0 auto;
+}
+
+.jumbotron {
+    background: rgba(233, 236, 239, 0.6) !important;  /* This is for ie8 and below */
+    background: rgba(233, 236, 239, 0.6) !important; 
+ }
+.jumboHead{
+    border: 10px solid rgba(255, 51, 85, 0.85);
+    border-radius: 20px;
+}
+.jumboText{
+    font-size: 65px;
+    font-weight: bold;
+    text-align: center;
+}
+.jumboSmall{
+    font-size: 40px;
+    text-align: center;
+}
+.highlight{
+    color: rgba(255, 51, 85, 0.85);
+    font-weight: bold;
+}
+.denim{
+    display: none;
+}
+.shopBtn{
+    background: rgba(255, 51, 85, 0.85);
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding:10px 30px;
+
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.shopBtn:hover{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    background: rgba(255, 51, 85, 1);
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    margin:40px 0;
+}
+.innerContent{
+    display: flex;
+    padding-left: 15px;
+    flex-direction: column;
+}
+
+.teaser{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.teaserText{
+    font-size: 60px;
+}
+.teaserSmall{
+    font-size: 30px;
+}
+.teaserProd{
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    margin: 40px;
+}
+
+.card-img-top{
+    height: 236px;
+}
+
+/* Store */
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+/* Cart */
+
+.cartHead{
+    /* font-weight: bold; */
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+    margin-top: 40px ;
+}
+.cartBottom{
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    margin-top: 40px ;
+}
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.quantity{
+    /* margin-left: 10px; */
+    margin-top: 10px;
+    user-select: none;
+}
+
+.sign{
+    background: rgba(255, 51, 85, 0.85);
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    /* margin-right:10px; */
+}
+.sign:nth-child(1){
+    margin-right: 10px;
+}
+.sign:nth-child(2){
+    margin-left: 10px ;
+}
+.subTotal,.delivery,.total{
+    display:flex;
+    justify-content: space-evenly;
+}
+.amount{
+    font-weight: bold;
+}
+.social{
+    width: 70%;
+}
+.checkoutBtn{
+    width:100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer{
+    margin-top: 150px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 20px;
+}
+.btn-info{
+    margin-top: 40px;
+    background-color: rgba(255, 51, 85, 0.85) !important;
+    border-color: rgba(255, 51, 85, 0.85) !important;
+}
+.btn-info:hover{
+    background-color: rgba(255, 51, 85, 1) !important;
+}
+
+
+
+
+
+/* Responsive queries */
+@media(max-width:900px){
+    .denim{
+        display: block;
+    }
+    .model{
+        display: none;
+    }
+}
+
+@media(max-width:888px){
+    .jumboText{
+        font-size: 50px;
+        font-weight: bold;
+    }
+    .jumboSmall{
+        font-size: 20px;
+    }
+}
+@media(max-width:655px){
+    .jumboText{
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .jumboSmall{
+        font-size: 20px;
+    }
+}
+@media(max-width:576px){
+   .denim{
+       width: 350px;
+   }
+}
