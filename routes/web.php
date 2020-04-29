@@ -13,21 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','TaskController@index');
 Route::get('/login','SessionController@create');
-Route::post('/login','SessionController@store');
+Route::post('/login','SessionController@checklogin');
 Route::get('/logout','SessionController@destroy');
 
 Route::get('/signup','RegistrationController@create');
 Route::post('/signup','RegistrationController@store');
 
-Route::get('/store', function () {
-    return view('store');
-});
+Route::get('/store','TaskController@yield');
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+
+Route::get('/cart','TaskController@output');
+
 

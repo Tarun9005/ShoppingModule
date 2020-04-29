@@ -24,10 +24,10 @@
             <form method="POST" action="/login">
                 {{csrf_field()}}
                 <div class="inputtype">
-                    <input class="inputData" type="text" placeholder="Username" required>
+                    <input class="inputData" type="text" placeholder="Username" name="username" required>
                 </div>
                 <div class="inputtype">
-                    <input class="inputData" type="password" placeholder="Password" required>
+                    <input class="inputData" type="password" placeholder="Password" name="password" required>
                 </div>
                 <h6 class= "signupText"><a href="/signup">Create a new account</a></h6>
                 <button type="submit" class="social">Login</button>
