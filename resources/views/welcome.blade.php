@@ -130,14 +130,14 @@
       </div> 
       <div class="row">
         @foreach ($image as $photos)
-        <div class="col-4">
+        <div class="col-3">
           <div class="teaserProd">
             <!-- Dynamic insertion of sample products through sample.js -->
             <div class="card" style="width: 18rem;">
               <img class="card-img-top" src="{{asset('public/image/' . $photos->image)}}" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">$photos->description</h5>
-                <h5 class="card-title">$<span class="price">$photos->price</span></h5>
+                <h5 class="card-title">{{$photos->description}}</h5>
+                <h5 class="card-title">$<span class="price">{{$photos->price}}</span></h5>
                 <a href="#" data-toggle="modal" data-target="#myModal" class="shopBtn addToCart">Add to Cart</a>
               </div>
             </div>
