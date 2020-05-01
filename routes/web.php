@@ -27,3 +27,8 @@ Route::get('/store','TaskController@yield');
 Route::get('/cart','TaskController@output');
 
 
+//admin view
+Route::get('/upload','ImageController@index');
+Route::post('/save','ImageController@save');
+
+
