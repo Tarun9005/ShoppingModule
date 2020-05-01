@@ -17,7 +17,7 @@ class TaskController extends Controller
 
     public function index(){
 
-        $image=Image::all();
+        $image=Image::take(4)->get();
        
     	return view('welcome',compact('image'));
     }
