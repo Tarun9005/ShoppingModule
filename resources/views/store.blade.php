@@ -26,8 +26,15 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link px-4 " href="/">Home </a>
             <a class="nav-item nav-link active px-4" href="/store">Store<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link px-4" href="/cart">My Cart</a>
-            <a class="nav-item nav-link px-4" href="/login">Login</a>
+           @if(Auth::check())
+        <a class="nav-item nav-link px-4" href="/cart">My Cart</a>
+        @endif
+        @if(Auth::check())
+        <a class="nav-item nav-link px-4" href="#">Hi {{Auth::User()->name}}</a>
+        <a class="nav-item nav-link px-4" href="/logout">Logout</a>
+        @else
+        <a class="nav-item nav-link px-4" href="/login">Login</a>
+        @endif
           </div>
         </div>
       </nav>
@@ -36,6 +43,22 @@
         STORE
         <hr>
     </div>
+    <div class="products">
+
+      @foreach($prod as $prods)
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{asset('public/image/' . $prods->image)}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{$prods->description}}</h5>
+          <h5 class="card-title">$<span class="price">{{$prods->price}}</span></h5>
+          <a href="#" data-toggle="modal" data-target="#myModal" class="shopBtn addToCart">Add to Cart</a>
+        </div>
+      </div>
+      @endforeach
+      
+
+     
+      </div>
 
       <div class="products">
 

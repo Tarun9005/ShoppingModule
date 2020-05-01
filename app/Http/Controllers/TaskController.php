@@ -18,12 +18,15 @@ class TaskController extends Controller
     public function index(){
 
         $image=Image::take(4)->get();
-       
-    	return view('welcome',compact('image'));
+
+        return view('welcome',compact('image'));
     }
 
     public function yield(){
-    	return view('store');
+
+        $prod = Image::all();
+
+        return view('store',compact('prod'));
 
     }
     public function output(){
