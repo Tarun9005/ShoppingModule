@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
+use App\Image;
 class TaskController extends Controller
 {
     //
@@ -16,7 +16,10 @@ class TaskController extends Controller
 
 
     public function index(){
-    	return view('welcome');
+
+        $image=Image::all();
+       
+    	return view('welcome',compact('image'));
     }
 
     public function yield(){

@@ -16,10 +16,22 @@ class ImageController extends Controller
     public function index()
     {
         //
+
+        
+
         return view('imageupload');
     }
  public function save(Request $request)
     {
+
+         //$user=Image::create(request(['description','price']));
+          
+        $price = $request->price;
+      
+        $description = $request->description;
+        //dd($description,$price);
+
+        
        request()->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
        ]);
@@ -28,8 +40,15 @@ class ImageController extends Controller
            $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
            $files->move($destinationPath, $profileImage);
            $insert['image'] = "$profileImage";
+           $insert['price'] = "$price";
+           $insert['description'] = "$description";
         }
         $check = Image::insertGetId($insert);
+
+
+       
+
+
  
         return Redirect::to('/')
         ->withSuccess('Great! Image has been successfully uploaded.');

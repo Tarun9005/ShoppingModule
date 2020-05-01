@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>Laravel Image Upload Example - Tutsmake.com</title>
+  <title>Admin Login</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
  
@@ -20,9 +20,9 @@
 <body>
  
 <div class="container">
-    <h2 style="margin-left: -48px;">Laravel Image Upload Example - Tutsmake.com</h2>
+    <h2 style="margin-left: -48px;">Welcome Admin, Enter the details of the product here!</h2>
     <br>
-    <h4>with preview</h4>
+    
     <br>
     @if ($message = Session::get('success'))
  
@@ -59,13 +59,29 @@
       @csrf
     <div class="avatar-upload col-12">
         <div class="avatar-edit">
+            <h4>Upload the Image for product</h4>
             <input type='file' id="image" name="image" onchange="readURL(this);" accept=".png, .jpg, .jpeg" />
             <label for="imageUpload"></label>
-            <img id="blah" src="https://www.tutsmake.com/wp-content/uploads/2019/01/no-image-tut.png" class="" width="200" height="150"/>
+            
         </div>
  
     </div>
-    <div class="avatar-upload col-6">
+    <div class="avatar-upload col-12 mt-3">
+        <h4>Enter the Description of the item</h4>
+        <div class="inputtype">
+            <input class="inputData" type="text" placeholder="description" name='description' required>
+        </div>
+    
+    </div>
+    <div class="avatar-upload col-12 mt-3">
+        <h4>Enter the Price of the item</h4>
+        <div class="inputtype">
+            <input class="inputData" type="text" placeholder="price" name='price' required>
+        </div>
+    
+    </div>
+    <div class="avatar-upload col-12 mt-3">
+        <h4></h4>
     <button type="submit" class="btn btn-success">Submit</button>
     </div>
     </form>
