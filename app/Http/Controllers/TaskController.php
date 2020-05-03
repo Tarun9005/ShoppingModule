@@ -67,7 +67,8 @@ return Redirect::back();
 
         $out=User::find($no);
         $outs= $out->id;
-        dd($outs);
-    	return view('cart');
+        $final=Cart::where('user_id', $outs)->get();
+        //dd($final);
+    	return view('cart',compact('final'));
     }
 }

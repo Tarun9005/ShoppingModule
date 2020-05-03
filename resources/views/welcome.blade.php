@@ -31,7 +31,7 @@
         <a class="nav-item nav-link active px-4 " href="/">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link px-4" href="/store">Store</a>
         @if(Auth::check())
-        <a class="nav-item nav-link px-4" href="/cart">My Cart</a>
+        <a class="nav-item nav-link px-4" href="/cart/{{Auth::User()->id}}">My Cart</a>
         @endif
         @if(Auth::check())
         <a class="nav-item nav-link px-4" href="#">Hi {{Auth::User()->name}}</a>

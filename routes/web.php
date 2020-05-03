@@ -25,7 +25,7 @@ Route::get('/store','TaskController@yield');
 Route::post('/store/{id}/{name}','TaskController@adding');
 
 
-Route::get('/cart/{no}','TaskController@output');
+Route::get('/cart/{cart}','TaskController@output');
 
 
 //admin view

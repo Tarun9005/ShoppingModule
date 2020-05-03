@@ -30,7 +30,7 @@
               <div class="navbar-nav">
                 <a class="nav-item nav-link px-4 " href="/">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link px-4" href="/store">Store</a>
-                <a class="nav-item nav-link px-4 active" href="/cart">My Cart</a>
+                <a class="nav-item nav-link px-4 active" href="/cart/{{Auth::User()->id}}">My Cart</a>
                 @if(Auth::check())
                 <a class="nav-item nav-link px-4" href="/logout">Logout</a>
                 @endif
@@ -60,18 +60,18 @@
 
     @if(Auth::check())
    
-    @foreach($prod as $prods)
-    <form method="POST" action="/store/{{$prods->id}}/{{Auth::User()->id}}">
-      {{csrf_field()}}
+    @foreach($final as $finals)
+
+  
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{asset('public/image/' . $prods->image)}}" alt="Card image cap">
+        <img class="card-img-top" src="{{asset('public/image/' . $finals->image)}}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{$prods->description}}</h5>
-          <h5 class="card-title">$<span class="price">{{$prods->price}}</span></h5>
-          <button data-toggle="modal" data-target="yModal" class="shopBtn addToCart" type="submit">Add to Cart</button>
+          <h5 class="card-title">{{$finals->description}}</h5>
+          <h5 class="card-title">$<span class="price">{{$finals->price}}</span></h5>
+          <button data-toggle="modal" data-target="yModal" class="shopBtn addToCart" type="submit">CheckOut</button>
         </div>
       </div>
-    </form>
+   
     @endforeach
     @endif
    </div>
