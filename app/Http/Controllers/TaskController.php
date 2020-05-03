@@ -9,6 +9,7 @@ use App\Cart;
 use DB;
 use Redirect;
 use Session;
+use Auth;
 class TaskController extends Controller
 {
     //
@@ -22,6 +23,8 @@ class TaskController extends Controller
     public function index(){
 
         $image=Image::take(4)->get();
+       
+        //dd($currentuserid);
 
         return view('welcome',compact('image'));
     }
@@ -36,14 +39,15 @@ class TaskController extends Controller
 
     }
 
-    public function adding($id, $name){
+    public function adding($id){
 
        $task=Image::find($id);
        $des=$task->description;
        $prs=$task->price;
        $img=$task->image;
-        $res=User::find($name);
-        $useid=$res->id;
+        //$res=User::find($name);
+        //$useid=$res->id;
+       $useid = Auth::user()->id;
 
         $cart= new Cart;
         $cart->user_id= $useid;
@@ -63,11 +67,12 @@ return Redirect::back();
    }
 
 
-    public function output($no){
+    public function output(){
 
-        $out=User::find($no);
-        $outs= $out->id;
-        $final=Cart::where('user_id', $outs)->get();
+        //$out=User::find($no);
+        //$outs= $out->id;
+         $currentuserid = Auth::user()->id;
+        $final=Cart::where('user_id', $currentuserid)->get();
         //dd($final);
     	return view('cart',compact('final'));
     }

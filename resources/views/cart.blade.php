@@ -30,7 +30,7 @@
               <div class="navbar-nav">
                 <a class="nav-item nav-link px-4 " href="/">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link px-4" href="/store">Store</a>
-                <a class="nav-item nav-link px-4 active" href="/cart/{{Auth::User()->id}}">My Cart</a>
+                <a class="nav-item nav-link px-4 active" href="/cart">My Cart</a>
                 @if(Auth::check())
                 <a class="nav-item nav-link px-4" href="/logout">Logout</a>
                 @endif

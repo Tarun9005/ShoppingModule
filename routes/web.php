@@ -22,10 +22,10 @@ Route::get('/signup','RegistrationController@create');
 Route::post('/signup','RegistrationController@store');
 
 Route::get('/store','TaskController@yield');
-Route::post('/store/{id}/{name}','TaskController@adding');
+Route::post('/store/{id}','TaskController@adding');
 
 
-Route::get('/cart/{cart}','TaskController@output');
+Route::get('/cart','TaskController@output');
 
 
 //admin view

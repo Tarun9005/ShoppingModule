@@ -27,7 +27,7 @@
         <a class="nav-item nav-link px-4 " href="/">Home </a>
         <a class="nav-item nav-link active px-4" href="/store">Store<span class="sr-only">(current)</span></a>
         @if(Auth::check())
-        <a class="nav-item nav-link px-4" href="/cart/{{Auth::User()->id}}">My Cart</a>
+        <a class="nav-item nav-link px-4" href="/cart">My Cart</a>
         @endif
         @if(Auth::check())
         <a class="nav-item nav-link px-4" href="#">Hi {{Auth::User()->name}}</a>
@@ -56,7 +56,7 @@
     @if(Auth::check())
    
     @foreach($prod as $prods)
-    <form method="POST" action="/store/{{$prods->id}}/{{Auth::User()->id}}">
+    <form method="POST" action="/store/{{$prods->id}}">
       {{csrf_field()}}
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{asset('public/image/' . $prods->image)}}" alt="Card image cap">
