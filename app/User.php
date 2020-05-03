@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,6 +15,12 @@ class User extends Authenticatable
         }
         $this->attributes['password'] = $value;
     }
+
+   // public function carts(){
+       // return $this->hasMany(Cart::class);
+   // }
+    
+
     use Notifiable;
 
     /**
@@ -44,3 +50,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+//class User extends Model{
+
+
+//}

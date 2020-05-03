@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StoreTube | Store</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StoreTube | Store</title>
 </head>
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -16,17 +16,17 @@
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">StoreTube</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link px-4 " href="/">Home </a>
-            <a class="nav-item nav-link active px-4" href="/store">Store<span class="sr-only">(current)</span></a>
-           @if(Auth::check())
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">StoreTube</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link px-4 " href="/">Home </a>
+        <a class="nav-item nav-link active px-4" href="/store">Store<span class="sr-only">(current)</span></a>
+        @if(Auth::check())
         <a class="nav-item nav-link px-4" href="/cart">My Cart</a>
         @endif
         @if(Auth::check())
@@ -35,40 +35,70 @@
         @else
         <a class="nav-item nav-link px-4" href="/login">Login</a>
         @endif
-          </div>
-        </div>
-      </nav>
-      <!-- Navbar Ends -->
-      <div class="cartHead">
-        STORE
-        <hr>
+      </div>
     </div>
-    <div class="products">
+  </nav>
 
-      @foreach($prod as $prods)
+  @if (Session::has('message'))
+   <div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
+  <!-- Navbar Ends -->
+  <div class="cartHead">
+    STORE
+    <hr>
+  </div>
+  <div class="products">
+
+
+
+
+
+    @if(Auth::check())
+   
+    @foreach($prod as $prods)
+    <form method="POST" action="/store/{{$prods->id}}/{{Auth::User()->id}}">
+      {{csrf_field()}}
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{asset('public/image/' . $prods->image)}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{$prods->description}}</h5>
           <h5 class="card-title">$<span class="price">{{$prods->price}}</span></h5>
-          <a href="#" data-toggle="modal" data-target="#myModal" class="shopBtn addToCart">Add to Cart</a>
+          <button data-toggle="modal" data-target="yModal" class="shopBtn addToCart" type="submit">Add to Cart</button>
         </div>
       </div>
-      @endforeach
-      
+    </form>
+    @endforeach
+   
 
-     
+
+    @else
+
+    @foreach($prod as $prods)
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{asset('public/image/' . $prods->image)}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{$prods->description}}</h5>
+        <h5 class="card-title">$<span class="price">{{$prods->price}}</span></h5>
+        <a href="#" data-toggle="modal" data-target="#myModal" class="shopBtn addToCart">Add to Cart</a>
       </div>
+    </div>
+    @endforeach
 
-      <div class="products">
+    @endif
 
-      </div>
-        <div class="cartBottom">
-          More products coming soon...
-          
-        </div>
-             
-           <!-- Modal -->
+
+
+  </div>
+
+  <div class="products">
+
+  </div>
+  <div class="cartBottom">
+    More products coming soon...
+
+  </div>
+
+  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -79,7 +109,7 @@
           
         </div>
         <div class="modal-body">
-          <p>Product was added to cart!</p>
+          <p>You must login first!</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="shopBtn" style="outline: none; border: none;" data-dismiss="modal">Close</button>
@@ -96,6 +126,6 @@
     <a href="mailto:nsnaman36@gmail.com" class="btn btn-info">Get in Touch</a>
   </footer>
 
-      <script src="./src/js/sample.js"></script>
+  <script src="./src/js/sample.js"></script>
 </body>
 </html>

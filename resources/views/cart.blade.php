@@ -17,8 +17,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
-<body onload="totalCalc()">
+<body>
+  {{-- <body onload="totalCalc()"> --}}
         <!-- Navbar -->
+       
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">StoreTube</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +52,29 @@
                   <!-- Sample product -->
                   <div class="items">
                  <!-- Insertion through JS -->
+                  <div class="products">
+
+
+
+
+
+    @if(Auth::check())
+   
+    @foreach($prod as $prods)
+    <form method="POST" action="/store/{{$prods->id}}/{{Auth::User()->id}}">
+      {{csrf_field()}}
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{asset('public/image/' . $prods->image)}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{$prods->description}}</h5>
+          <h5 class="card-title">$<span class="price">{{$prods->price}}</span></h5>
+          <button data-toggle="modal" data-target="yModal" class="shopBtn addToCart" type="submit">Add to Cart</button>
+        </div>
+      </div>
+    </form>
+    @endforeach
+    @endif
+   </div>
                 </div>
                 
             </div>
